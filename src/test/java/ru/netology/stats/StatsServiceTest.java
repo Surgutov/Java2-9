@@ -39,4 +39,19 @@ class StatsServiceTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void numberMonthMinSales() {
+        StatsService service = new StatsService();
+        int expected = 8;
+        int actual = service.numberMonthMinSales();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void monthCountUpperAverage() {
+        StatsService service = new StatsService();
+        int expected = 6;
+        int actual = service.monthCountUpperAverage();
+        assertEquals(expected, actual);
+    }
 }

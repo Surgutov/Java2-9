@@ -26,7 +26,6 @@ public class StatsService {
             if (salesDataByYear[monthNumb] < salesDataByYear[i]) {
                 monthNumb = i;
             }
-
         }
         return monthNumb;
     }
@@ -43,7 +42,31 @@ public class StatsService {
         return monthCount;
     }
 
+    public int numberMonthMinSales() {
+        int[] salesDataByYear = getSalesData();
+        int monthNumb = 0;
+        for (int i = 1; i < 11; i++) {
+            if (salesDataByYear[monthNumb] > salesDataByYear[i]) {
+                monthNumb = i;
+            }
+        }
+        return monthNumb;
+    }
+
+    public int monthCountUpperAverage() {
+        double average = averageSum();
+        int monthCount = 0;
+        int[] salesDataByYear = getSalesData();
+        for (int i = 0; i < 12; i++) {
+            if (average > salesDataByYear[i]) {
+                monthCount++;
+            }
+        }
+        return monthCount;
+    }
+
     public int[] getSalesData() {
+        //Мне так удобнее. Я художник, я так вижу.
         int[] sales = new int[12];
         sales[0] = 8;
         sales[1] = 15;
